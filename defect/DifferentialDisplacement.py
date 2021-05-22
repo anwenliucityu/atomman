@@ -416,11 +416,12 @@ class DifferentialDisplacement():
             x_sq = x_sq/frac - x0**2
             y_sq = y_sq/frac - y0**2
             xy = xy/frac -x0*y0
-        fig.x0 = x0
-        fig.y0 = y0
-        fig.x_sq = x_sq
-        fig.y_sq = y_sq
-        fig.xy = xy
+            fig.x0 = x0
+            fig.y0 = y0
+            fig.x_sq = x_sq
+            fig.y_sq = y_sq
+            fig.xy = xy
+            ax1.plot(x0,y0,color='blue', marker="+", markersize = 40, markeredgewidth=5, linestyle='dashed')
 
         from scipy.interpolate import Rbf
 
@@ -509,7 +510,9 @@ class DifferentialDisplacement():
                            pivot='middle', angles='xy', scale_units='xy',
                            scale=1, width=width, minshaft=2)
 
-        ax1.plot(x0,y0,color='blue', marker="+", markersize = 40, markeredgewidth=5, linestyle='dashed')
+        #ax1.plot(2.93749682368896/2,0,color='blue',marker="+",linestyle='dashed',
+               # linewidth=4, markersize=60.0)
+
         ax1.set_aspect('equal')
         if matplotlib_axes is None:
             return fig
